@@ -7,9 +7,8 @@ describe('EternalNFT Contract', async () => {
 
     // Deploys the EternalNFT contract and the EternalMarket contract before each test
     beforeEach('Setup Contract', async () => {
-        const EternalNFT = await ethers.getContractFactory('EternalNFT')
-        nft = await EternalNFT.deploy()
-        nftContractAddress = await nft.address
+        nft = await ethers.deployContract("FriendNFT");
+        nftContractAddress = await nft.getAddress()
     })
 
     // Tests address for the EternalNFT contract
